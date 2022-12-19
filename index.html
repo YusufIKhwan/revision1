@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+    <script src="cal.js"></script>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input,
+        select {
+            width: 100px;
+        }
+
+        .table1 {
+            float: left;
+        }
+
+        .table2 {
+            border-collapse: collapse;
+        }
+
+        .table2 th,
+        .table2 td {
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Chicken Rice Order Form</h1>
+    <table class="table1">
+        <tr>
+            <td>Quantity</td>
+            <td><input id="quantity" type="number" min="1" value="1" onchange="changeq();"></td>
+        </tr>
+        <tr>
+            <td>Building</td>
+            <td>
+                <select id="building" onchange="changeq1();">
+                    <option value="0" >Block A</option>
+                    <option value="1" >Block B</option>
+                    <option value="2" >Block C</option>
+                    <option value="3" >Block D</option>
+                    <option value="4" >Block E</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Level</td>
+            <td><input id="level" type="number" min="0" max="5" value="0" onchange="changeq2();"></td>
+        </tr>
+        <tr>
+            <td>Room</td>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <td>Total price:</td>
+            <td id="total"  onchange=  "changeq();" onchange=  "changeq1();"onchange=  "changeq2();"onchange=  "totalprice();" ></td>  
+
+        </tr>
+    </table>
+    <table border="1" class="table2">
+        <tr>
+            <th>A</th>
+            <td>Quantity X RM5.00</td>
+        </tr>
+        <tr>
+            <th>B</th>
+            <td>
+                Block A = Free<br>
+                Block B = RM1.00<br>
+                Block C = RM2.00<br>
+                Block D = RM3.00<br>
+                Block E = RM4.00<br>
+            </td>
+        </tr>
+        <tr>
+            <th>C</th>
+            <td>
+                Level 0 = Free<br>
+                Level 1 = RM1.00<br>
+                Level 2 = RM2.00<br>
+                Level 3 = RM3.00<br>
+                Level 4 = RM4.00<br>
+                Level 5 = RM5.00<br>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                Total price = A + B + C
+            </td>
+        </tr>
+
+    </table>
+</body>
+
+</html>
